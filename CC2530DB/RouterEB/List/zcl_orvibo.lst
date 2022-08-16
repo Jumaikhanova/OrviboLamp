@@ -1,0 +1,1595 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.40.1.7397 for 8051               16/Aug/2022  12:32:17
+# Copyright 2004-2021 IAR Systems AB.
+# Evaluation license - IAR Embedded Workbench for 8051, Evaluation edition 10.40
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        C:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\Working v1.1\Source\zcl_orvibo.c
+#    Command line       =  
+#        -f C:\Users\LENOVO~1\AppData\Local\Temp\EWEEB7.tmp ("C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\Source\zcl_orvibo.c" -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D
+#        NV_RESTORE -D xZTOOL_P1 -D xMT_TASK -D xMT_APP_FUNC -D xMT_SYS_FUNC -D
+#        xMT_ZDO_FUNC -D xMT_ZDO_MGMT -D xMT_APP_CNF_FUNC -D LEGACY_LCD_DEBUG
+#        -D LCD_SUPPORTED=DEBUG -D MULTICAST_ENABLED=FALSE -D ZCL_READ -D
+#        ZCL_WRITE -D ZCL_BASIC -D ZCL_IDENTIFY -D ZCL_SCENES -D ZCL_GROUPS -D
+#        ZCL_ON_OFF -D ZCL_REPORTING_DEVICE -lC "C:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\RouterEB\List" -lA "C:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\RouterEB\List" --diag_suppress Pe001,Pa010 -o "C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\RouterEB\Obj" -e --debug --core=plain --dptr=16,1
+#        --data_model=large --code_model=banked
+#        --calling_convention=xdata_reentrant --place_constants=data_rom
+#        --nr_virtual_regs 16 -f "C:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\Tools\CC2530DB\f8wRouter.cfg" (-DCPU32MHZ
+#        -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+#        -DRTR_NWK) -f "C:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg" (-DZIGBEEPRO
+#        -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x07FFF800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0} -DMAC_MAX_FRAME_SIZE=116
+#        -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const __code"
+#        -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000
+#        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100 -DREJOIN_POLL_RATE=440
+#        -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000 -DENABLE_LED4_DISABLE_S1)
+#        -f "C:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg" -I "C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\" -I "C:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\Working v1.1\CC2530DB\..\Source\"
+#        -I "C:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\Source\" -I "C:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\ZMain\TI2530DB\" -I "C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\hal\include\" -I "C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\" -I
+#        "C:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\mac\include\" -I "C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\mac\high_level\" -I "C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\" -I
+#        "C:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "C:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\mt\" -I "C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\osal\include\" -I "C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\services\saddr\" -I "C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\services\sdata\" -I "C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\stack\af\" -I "C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\stack\bdb\" -I "C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\stack\nwk\" -I "C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\stack\bdb\" -I "C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\stack\gp\" -I "C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\stack\sapi\" -I "C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\stack\sec\" -I "C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\stack\sys\" -I "C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\stack\zcl\" -I "C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\stack\zdo\" -I "C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\zmac\" -I "C:\Texas
+#        Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\..\..\..\..\..\Components\zmac\f8w\" -Ohz
+#        --require_prototypes)
+#    Locale             =  Russian_RUS.1251
+#    List file          =  
+#        C:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\RouterEB\List\zcl_orvibo.lst
+#    Object file        =  
+#        C:\Texas Instruments\Z-Stack
+#        3.0.2\Projects\zstack\HomeAutomation\Working
+#        v1.1\CC2530DB\RouterEB\Obj\zcl_orvibo.r51
+#
+###############################################################################
+
+C:\Texas Instruments\Z-Stack 3.0.2\Projects\zstack\HomeAutomation\Working v1.1\Source\zcl_orvibo.c
+      1          /**************************************************************************************************
+      2            Filename:       zcl_orvibo.c
+      3            Revised:        $Date: 2014-10-24 16:04:46 -0700 (Fri, 24 Oct 2014) $
+      4            Revision:       $Revision: 40796 $
+      5          
+      6          
+      7            Description:    Zigbee Cluster Library - sample device application.
+      8          
+      9          
+     10            Copyright 2006-2014 Texas Instruments Incorporated. All rights reserved.
+     11          
+     12            IMPORTANT: Your use of this Software is limited to those specific rights
+     13            granted under the terms of a software license agreement between the user
+     14            who downloaded the software, his/her employer (which must be your employer)
+     15            and Texas Instruments Incorporated (the "License").  You may not use this
+     16            Software unless you agree to abide by the terms of the License. The License
+     17            limits your use, and you acknowledge, that the Software may not be modified,
+     18            copied or distributed unless embedded on a Texas Instruments microcontroller
+     19            or used solely and exclusively in conjunction with a Texas Instruments radio
+     20            frequency transceiver, which is integrated into your product.  Other than for
+     21            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     22            works of, modify, distribute, perform, display or sell this Software and/or
+     23            its documentation for any purpose.
+     24          
+     25            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     26            PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     27            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     28            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     29            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     30            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     31            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     32            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     33            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     34            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     35            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     36          
+     37            Should you have any questions regarding your right to use this Software,
+     38            contact Texas Instruments Incorporated at www.TI.com.
+     39          **************************************************************************************************/
+     40          
+     41          /*********************************************************************
+     42            This application is a template to get started writing an application
+     43            from scratch.
+     44          
+     45            Look for the sections marked with "ORVIBO_TODO" to add application
+     46            specific code.
+     47          
+     48            Note: if you would like your application to support automatic attribute
+     49            reporting, include the BDB_REPORTING compile flag.
+     50          *********************************************************************/
+     51          
+     52          /*********************************************************************
+     53           * INCLUDES
+     54           */
+     55          #include "ZComDef.h"
+     56          #include "OSAL.h"
+     57          #include "AF.h"
+     58          #include "ZDApp.h"
+     59          #include "ZDObject.h"
+     60          #include "MT_SYS.h"
+     61          
+     62          #include "nwk_util.h"
+     63          
+     64          #include "zcl.h"
+     65          #include "zcl_general.h"
+     66          #include "zcl_ha.h"
+     67          #include "zcl_diagnostic.h"
+     68          #include "zcl_orvibo.h"
+     69          
+     70          #include "bdb.h"
+     71          #include "bdb_interface.h"
+     72          #include "gp_interface.h"
+     73          
+     74          #if defined ( INTER_PAN )
+     75          #if defined ( BDB_TL_INITIATOR )
+     76            #include "bdb_touchlink_initiator.h"
+     77          #endif // BDB_TL_INITIATOR
+     78          #if defined ( BDB_TL_TARGET )
+     79            #include "bdb_touchlink_target.h"
+     80          #endif // BDB_TL_TARGET
+     81          #endif // INTER_PAN
+     82          
+     83          #if defined ( BDB_TL_INITIATOR ) || defined ( BDB_TL_TARGET )
+     84            #include "bdb_touchlink.h"
+     85          #endif
+     86          
+     87          #include "onboard.h"
+     88          
+     89          /* HAL */
+     90          #include "hal_lcd.h"
+     91          #include "hal_led.h"
+     92          #include "hal_key.h"
+     93          
+     94          /*********************************************************************
+     95           * MACROS
+     96           */
+     97          
+     98          
+     99          /*********************************************************************
+    100           * CONSTANTS
+    101           */
+    102          
+    103          
+    104          /*********************************************************************
+    105           * TYPEDEFS
+    106           */
+    107          
+    108          /*********************************************************************
+    109           * GLOBAL VARIABLES
+    110           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    111          byte zclOrvibo_TaskID;
+   \                     zclOrvibo_TaskID:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    112          
+    113          
+    114          /*********************************************************************
+    115           * GLOBAL FUNCTIONS
+    116           */
+    117           
+    118          /*********************************************************************
+    119           * LOCAL VARIABLES
+    120           */
+    121          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    122          devStates_t zclOrvibo_NwkState = DEV_INIT;
+   \                     zclOrvibo_NwkState:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for zclOrvibo_NwkState>`
+   \   000001                REQUIRE __INIT_XDATA_I
+    123          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    124          uint8 RELAY_STATE = 0;
+   \                     RELAY_STATE:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    125          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    126          afAddrType_t zclOrvibo_DstAddr;
+   \                     zclOrvibo_DstAddr:
+   \   000000                DS 12
+   \   00000C                REQUIRE __INIT_XDATA_Z
+    127          /*********************************************************************
+    128           * LOCAL FUNCTIONS
+    129           */
+    130          static void zclOrvibo_BasicResetCB( void );
+    131          static void zclOrvibo_ProcessIdentifyTimeChange( uint8 endpoint );
+    132          static void zclOrvibo_BindNotification( bdbBindNotificationData_t *data );
+    133          #if ( defined ( BDB_TL_TARGET ) && (BDB_TOUCHLINK_CAPABILITY_ENABLED == TRUE) )
+    134          static void zclOrvibo_ProcessTouchlinkTargetEnable( uint8 enable );
+    135          #endif
+    136          
+    137          static void zclOrvibo_ProcessCommissioningStatus(bdbCommissioningModeMsg_t *bdbCommissioningModeMsg);
+    138          
+    139          // Functions to process ZCL Foundation incoming Command/Response messages
+    140          static void zclOrvibo_ProcessIncomingMsg( zclIncomingMsg_t *msg );
+    141          #ifdef ZCL_READ
+    142          static uint8 zclOrvibo_ProcessInReadRspCmd( zclIncomingMsg_t *pInMsg );
+    143          #endif
+    144          #ifdef ZCL_WRITE
+    145          static uint8 zclOrvibo_ProcessInWriteRspCmd( zclIncomingMsg_t *pInMsg );
+    146          #endif
+    147          static uint8 zclOrvibo_ProcessInDefaultRspCmd( zclIncomingMsg_t *pInMsg );
+    148          #ifdef ZCL_DISCOVER
+    149          static uint8 zclOrvibo_ProcessInDiscCmdsRspCmd( zclIncomingMsg_t *pInMsg );
+    150          static uint8 zclOrvibo_ProcessInDiscAttrsRspCmd( zclIncomingMsg_t *pInMsg );
+    151          static uint8 zclOrvibo_ProcessInDiscAttrsExtRspCmd( zclIncomingMsg_t *pInMsg );
+    152          #endif
+    153          
+    154          static void zclSampleApp_BatteryWarningCB( uint8 voltLevel);
+    155          static void updateRelay( bool );
+    156          static void applyRelay( void );
+    157          /*********************************************************************
+    158           * STATUS STRINGS
+    159           */
+    160          #ifdef LCD_SUPPORTED
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    161          const char sDeviceName[]   = "  Generic App";
+   \                     sDeviceName:
+   \   000000   20204765     DB "  Generic App"
+   \            6E657269
+   \            63204170
+   \            7000    
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    162          const char sClearLine[]    = " ";
+   \                     sClearLine:
+   \   000000   2000         DB " "
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    163          const char sSwOrvibo[]      = "SW1:GENAPP_TODO";  // ORVIBO_TODO
+   \                     sSwOrvibo:
+   \   000000   5357313A     DB "SW1:GENAPP_TODO"
+   \            47454E41
+   \            50505F54
+   \            4F444F00
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    164          const char sSwBDBMode[]     = "SW2: Start BDB";
+   \                     sSwBDBMode:
+   \   000000   5357323A     DB "SW2: Start BDB"
+   \            20537461
+   \            72742042
+   \            444200  
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    165          char sSwHelp[]             = "SW4: Help       ";  // last character is * if NWK open
+   \                     sSwHelp:
+   \   000000                DS 17
+   \   000011                REQUIRE `?<Initializer for sSwHelp>`
+   \   000011                REQUIRE __INIT_XDATA_I
+    166          #endif
+    167          void zclOrvibo_ReportOnOff( void );
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    168          uint8 SeqNum = 0;
+   \                     SeqNum:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    169          /*********************************************************************
+    170           * ZCL General Profile Callback table
+    171           */
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    172          static zclGeneral_AppCallbacks_t zclOrvibo_CmdCallbacks =
+   \                     zclOrvibo_CmdCallbacks:
+   \   000000                DS 24
+   \   000018                REQUIRE `?<Initializer for zclOrvibo_CmdCallbacks>`
+   \   000018                REQUIRE __INIT_XDATA_I
+    173          {
+    174            zclOrvibo_BasicResetCB,             // Basic Cluster Reset command
+    175            NULL,                                   // Identify Trigger Effect command
+    176            zclOrvibo_OnOffCB,                    // On/Off cluster commands
+    177            NULL,                                   // On/Off cluster enhanced command Off with Effect
+    178            NULL,                                   // On/Off cluster enhanced command On with Recall Global Scene
+    179            NULL,                                   // On/Off cluster enhanced command On with Timed Off
+    180          #ifdef ZCL_LEVEL_CTRL
+    181            NULL,                                   // Level Control Move to Level command
+    182            NULL,                                   // Level Control Move command
+    183            NULL,                                   // Level Control Step command
+    184            NULL,                                   // Level Control Stop command
+    185          #endif
+    186          #ifdef ZCL_GROUPS
+    187            NULL,                                   // Group Response commands
+    188          #endif
+    189          #ifdef ZCL_SCENES
+    190            NULL,                                  // Scene Store Request command
+    191            NULL,                                  // Scene Recall Request command
+    192            NULL,                                  // Scene Response command
+    193          #endif
+    194          #ifdef ZCL_ALARMS
+    195            NULL,                                  // Alarm (Response) commands
+    196          #endif
+    197          #ifdef SE_UK_EXT
+    198            NULL,                                  // Get Event Log command
+    199            NULL,                                  // Publish Event Log command
+    200          #endif
+    201            NULL,                                  // RSSI Location command
+    202            NULL                                   // RSSI Location Response command
+    203          };
+    204          
+    205          /*********************************************************************
+    206           * ORVIBO_TODO: Add other callback structures for any additional application specific 
+    207           *       Clusters being used, see available callback structures below.
+    208           *
+    209           *       bdbTL_AppCallbacks_t 
+    210           *       zclApplianceControl_AppCallbacks_t 
+    211           *       zclApplianceEventsAlerts_AppCallbacks_t 
+    212           *       zclApplianceStatistics_AppCallbacks_t 
+    213           *       zclElectricalMeasurement_AppCallbacks_t 
+    214           *       zclGeneral_AppCallbacks_t 
+    215           *       zclGp_AppCallbacks_t 
+    216           *       zclHVAC_AppCallbacks_t 
+    217           *       zclLighting_AppCallbacks_t 
+    218           *       zclMS_AppCallbacks_t 
+    219           *       zclPollControl_AppCallbacks_t 
+    220           *       zclPowerProfile_AppCallbacks_t 
+    221           *       zclSS_AppCallbacks_t  
+    222           *
+    223           */
+    224          
+    225          /*********************************************************************
+    226           * @fn          zclOrvibo_Init
+    227           *
+    228           * @brief       Initialization function for the zclGeneral layer.
+    229           *
+    230           * @param       none
+    231           *
+    232           * @return      none
+    233           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    234          void zclOrvibo_Init( byte task_id )
+   \                     zclOrvibo_Init:
+    235          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV       A,R1
+   \   000006   FE           MOV       R6,A
+    236            bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_STEERING |
+    237                                   BDB_COMMISSIONING_MODE_FINDING_BINDING);
+   \   000007                ; Setup parameters for call to function bdb_StartCommissioning
+   \   000007   790A         MOV       R1,#0xa
+   \   000009   12....       LCALL     `??bdb_StartCommissioning::?relay`; Banked call to: bdb_StartCommissioning
+    238                                   
+    239            zclOrvibo_TaskID = task_id;
+   \   00000C   EE           MOV       A,R6
+   \   00000D   90....       MOV       DPTR,#zclOrvibo_TaskID
+   \   000010   F0           MOVX      @DPTR,A
+    240          
+    241            // This app is part of the Home Automation Profile
+    242            bdb_RegisterSimpleDescriptor( &zclOrvibo_SimpleDesc );
+   \   000011                ; Setup parameters for call to function bdb_RegisterSimpleDescriptor
+   \   000011   7A..         MOV       R2,#zclOrvibo_SimpleDesc & 0xff
+   \   000013   7B..         MOV       R3,#(zclOrvibo_SimpleDesc >> 8) & 0xff
+   \   000015   12....       LCALL     `??bdb_RegisterSimpleDescriptor::?relay`; Banked call to: bdb_RegisterSimpleDescriptor
+    243          
+    244            // Register the ZCL General Cluster Library callback functions
+    245            zclGeneral_RegisterCmdCallbacks( ORVIBO_ENDPOINT, &zclOrvibo_CmdCallbacks );
+   \   000018                ; Setup parameters for call to function zclGeneral_RegisterCmdCallbacks
+   \   000018   7A..         MOV       R2,#zclOrvibo_CmdCallbacks & 0xff
+   \   00001A   7B..         MOV       R3,#(zclOrvibo_CmdCallbacks >> 8) & 0xff
+   \   00001C   7901         MOV       R1,#0x1
+   \   00001E   12....       LCALL     `??zclGeneral_RegisterCmdCallbacks::?relay`; Banked call to: zclGeneral_RegisterCmdCallbacks
+    246            
+    247            // ORVIBO_TODO: Register other cluster command callbacks here
+    248          
+    249            // Register the application's attribute list
+    250            zcl_registerAttrList( ORVIBO_ENDPOINT, zclOrvibo_NumAttributes, zclOrvibo_Attrs );
+   \   000021                ; Setup parameters for call to function zcl_registerAttrList
+   \   000021   7C..         MOV       R4,#zclOrvibo_Attrs & 0xff
+   \   000023   7D..         MOV       R5,#(zclOrvibo_Attrs >> 8) & 0xff
+   \   000025   90....       MOV       DPTR,#zclOrvibo_NumAttributes
+   \   000028   E4           CLR       A
+   \   000029   93           MOVC      A,@A+DPTR
+   \   00002A   FA           MOV       R2,A
+   \   00002B   7901         MOV       R1,#0x1
+   \   00002D   12....       LCALL     `??zcl_registerAttrList::?relay`; Banked call to: zcl_registerAttrList
+    251          
+    252            // Register the Application to receive the unprocessed Foundation command/response messages
+    253            zcl_registerForMsg( zclOrvibo_TaskID );
+   \   000030                ; Setup parameters for call to function zcl_registerForMsg
+   \   000030   90....       MOV       DPTR,#zclOrvibo_TaskID
+   \   000033   E0           MOVX      A,@DPTR
+   \   000034   F9           MOV       R1,A
+   \   000035   12....       LCALL     `??zcl_registerForMsg::?relay`; Banked call to: zcl_registerForMsg
+    254          
+    255          #ifdef ZCL_DISCOVER
+    256            // Register the application's command list
+    257            zcl_registerCmdList( ORVIBO_ENDPOINT, zclCmdsArraySize, zclOrvibo_Cmds );
+    258          #endif
+    259          
+    260            // Register low voltage NV memory protection application callback
+    261            RegisterVoltageWarningCB( zclSampleApp_BatteryWarningCB );
+   \   000038                ; Setup parameters for call to function RegisterVoltageWarningCB
+   \   000038   7A..         MOV       R2,#`??zclSampleApp_BatteryWarningCB::?relay` & 0xff
+   \   00003A   7B..         MOV       R3,#(`??zclSampleApp_BatteryWarningCB::?relay` >> 8) & 0xff
+   \   00003C   12....       LCALL     `??RegisterVoltageWarningCB::?relay`; Banked call to: RegisterVoltageWarningCB
+    262          
+    263            // Register for all key events - This app will handle all key events
+    264            RegisterForKeys( zclOrvibo_TaskID );
+   \   00003F                ; Setup parameters for call to function RegisterForKeys
+   \   00003F   90....       MOV       DPTR,#zclOrvibo_TaskID
+   \   000042   E0           MOVX      A,@DPTR
+   \   000043   F9           MOV       R1,A
+   \   000044   12....       LCALL     `??RegisterForKeys::?relay`; Banked call to: RegisterForKeys
+    265          
+    266            bdb_RegisterCommissioningStatusCB( zclOrvibo_ProcessCommissioningStatus );
+   \   000047                ; Setup parameters for call to function bdb_RegisterCommissioningStatusCB
+   \   000047   7A..         MOV       R2,#`??zclOrvibo_ProcessCommissioningStatus::?relay` & 0xff
+   \   000049   7B..         MOV       R3,#(`??zclOrvibo_ProcessCommissioningStatus::?relay` >> 8) & 0xff
+   \   00004B   12....       LCALL     `??bdb_RegisterCommissioningStatusCB::?relay`; Banked call to: bdb_RegisterCommissioningStatusCB
+    267            bdb_RegisterIdentifyTimeChangeCB( zclOrvibo_ProcessIdentifyTimeChange );
+   \   00004E                ; Setup parameters for call to function bdb_RegisterIdentifyTimeChangeCB
+   \   00004E   7A..         MOV       R2,#`??zclOrvibo_ProcessIdentifyTimeChange::?relay` & 0xff
+   \   000050   7B..         MOV       R3,#(`??zclOrvibo_ProcessIdentifyTimeChange::?relay` >> 8) & 0xff
+   \   000052   12....       LCALL     `??bdb_RegisterIdentifyTimeChangeCB::?relay`; Banked call to: bdb_RegisterIdentifyTimeChangeCB
+    268            bdb_RegisterBindNotificationCB( zclOrvibo_BindNotification );
+   \   000055                ; Setup parameters for call to function bdb_RegisterBindNotificationCB
+   \   000055   7A..         MOV       R2,#`??zclOrvibo_BindNotification::?relay` & 0xff
+   \   000057   7B..         MOV       R3,#(`??zclOrvibo_BindNotification::?relay` >> 8) & 0xff
+   \   000059   12....       LCALL     `??bdb_RegisterBindNotificationCB::?relay`; Banked call to: bdb_RegisterBindNotificationCB
+    269          
+    270          #if ( defined ( BDB_TL_TARGET ) && (BDB_TOUCHLINK_CAPABILITY_ENABLED == TRUE) )
+    271            bdb_RegisterTouchlinkTargetEnableCB( zclOrvibo_ProcessTouchlinkTargetEnable );
+    272          #endif
+    273          
+    274          #ifdef ZCL_DIAGNOSTIC
+    275            // Register the application's callback function to read/write attribute data.
+    276            // This is only required when the attribute data format is unknown to ZCL.
+    277            zcl_registerReadWriteCB( ORVIBO_ENDPOINT, zclDiagnostic_ReadWriteAttrCB, NULL );
+    278          
+    279            if ( zclDiagnostic_InitStats() == ZSuccess )
+    280            {
+    281              // Here the user could start the timer to save Diagnostics to NV
+    282            }
+    283          #endif
+    284          
+    285          
+    286          #ifdef LCD_SUPPORTED
+    287            HalLcdWriteString ( (char *)sDeviceName, HAL_LCD_LINE_3 );
+   \   00005C                ; Setup parameters for call to function HalLcdWriteString
+   \   00005C   7903         MOV       R1,#0x3
+   \   00005E   7A..         MOV       R2,#sDeviceName & 0xff
+   \   000060   7B..         MOV       R3,#(sDeviceName >> 8) & 0xff
+   \   000062   12....       LCALL     `??HalLcdWriteString::?relay`; Banked call to: HalLcdWriteString
+    288          #endif  // LCD_SUPPORTED
+    289          
+    290          
+    291          }
+   \   000065                REQUIRE ?Subroutine0
+   \   000065                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   7F01         MOV       R7,#0x1
+   \   000002   02....       LJMP      ?BANKED_LEAVE_XDATA
+    292          
+    293          /*********************************************************************
+    294           * @fn          zclSample_event_loop
+    295           *
+    296           * @brief       Event Loop Processor for zclGeneral.
+    297           *
+    298           * @param       none
+    299           *
+    300           * @return      none
+    301           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    302          uint16 zclOrvibo_event_loop( uint8 task_id, uint16 events )
+   \                     zclOrvibo_event_loop:
+    303          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV       A,#-0xc
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV       ?V0,R2
+   \   000007   8B..         MOV       ?V1,R3
+    304            afIncomingMSGPacket_t *MSGpkt;
+    305          
+    306            (void)task_id;  // Intentionally unreferenced parameter
+    307          
+    308            if ( events & SYS_EVENT_MSG )
+   \   000009   EB           MOV       A,R3
+   \   00000A   5480         ANL       A,#0x80
+   \   00000C   7025         JNZ       ??zclOrvibo_event_loop_0
+    309            {
+    310              while ( (MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( zclOrvibo_TaskID )) )
+    311              {
+    312                switch ( MSGpkt->hdr.event )
+    313                {
+    314                  case ZCL_INCOMING_MSG:
+    315                    // Incoming ZCL Foundation command/response messages
+    316                    zclOrvibo_ProcessIncomingMsg( (zclIncomingMsg_t *)MSGpkt );
+    317                    break;
+    318          
+    319                  //case KEY_CHANGE:
+    320                    //zclOrvibo_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+    321                    //break;
+    322          
+    323                  case ZDO_STATE_CHANGE:
+    324                    zclOrvibo_NwkState = (devStates_t)(MSGpkt->hdr.status);
+    325          
+    326                    // now on the network
+    327                    if ( (zclOrvibo_NwkState == DEV_ZB_COORD) ||
+    328                         (zclOrvibo_NwkState == DEV_ROUTER)   ||
+    329                         (zclOrvibo_NwkState == DEV_END_DEVICE) )
+    330                    {
+    331                      zclOrvibo_ReportOnOff();
+    332                    }
+    333                    break;
+    334          
+    335                  default:
+    336                    break;
+    337                }
+    338          
+    339                // Release the memory
+    340                osal_msg_deallocate( (uint8 *)MSGpkt );
+    341              }
+    342          
+    343              // return unprocessed events
+    344              return (events ^ SYS_EVENT_MSG);
+    345            }
+    346            
+    347          #if ZG_BUILD_ENDDEVICE_TYPE    
+    348            if ( events & ORVIBO_END_DEVICE_REJOIN_EVT )
+    349            {
+    350              bdb_ZedAttemptRecoverNwk();
+    351              return ( events ^ ORVIBO_END_DEVICE_REJOIN_EVT );
+    352            }
+    353          #endif
+    354          
+    355            /* ORVIBO_TODO: handle app events here */
+    356            
+    357            
+    358              /*
+    359            if ( events & ORVIBO_EVT_2 )
+    360            {
+    361              
+    362              return ( events ^ ORVIBO_EVT_2 );
+    363            }
+    364            
+    365            if ( events & ORVIBO_EVT_3 )
+    366            {
+    367              
+    368              return ( events ^ ORVIBO_EVT_3 );
+    369            }
+    370            */
+    371            
+    372            // Discard unknown events
+    373            return 0;
+   \   00000E   7A00         MOV       R2,#0x0
+   \   000010   7B00         MOV       R3,#0x0
+   \                     ??zclOrvibo_event_loop_1:
+   \   000012   02....       LJMP      ?Subroutine1 & 0xFFFF
+   \                     ??zclOrvibo_event_loop_2:
+   \   000015   A3           INC       DPTR
+   \   000016   E0           MOVX      A,@DPTR
+   \   000017   90....       MOV       DPTR,#zclOrvibo_NwkState
+   \   00001A   F0           MOVX      @DPTR,A
+   \   00001B   6409         XRL       A,#0x9
+   \   00001D   600A         JZ        ??zclOrvibo_event_loop_3
+   \   00001F   E0           MOVX      A,@DPTR
+   \   000020   6407         XRL       A,#0x7
+   \   000022   6005         JZ        ??zclOrvibo_event_loop_3
+   \   000024   E0           MOVX      A,@DPTR
+   \   000025   6406         XRL       A,#0x6
+   \   000027   7003         JNZ       ??zclOrvibo_event_loop_4
+   \                     ??zclOrvibo_event_loop_3:
+   \   000029                ; Setup parameters for call to function zclOrvibo_ReportOnOff
+   \   000029   12....       LCALL     `??zclOrvibo_ReportOnOff::?relay`; Banked call to: zclOrvibo_ReportOnOff
+   \                     ??zclOrvibo_event_loop_4:
+   \   00002C                ; Setup parameters for call to function osal_msg_deallocate
+   \   00002C   AA..         MOV       R2,?V2
+   \   00002E   EF           MOV       A,R7
+   \   00002F   FB           MOV       R3,A
+   \   000030   12....       LCALL     `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+   \                     ??zclOrvibo_event_loop_0:
+   \   000033                ; Setup parameters for call to function osal_msg_receive
+   \   000033   90....       MOV       DPTR,#zclOrvibo_TaskID
+   \   000036   E0           MOVX      A,@DPTR
+   \   000037   F9           MOV       R1,A
+   \   000038   12....       LCALL     `??osal_msg_receive::?relay`; Banked call to: osal_msg_receive
+   \   00003B   8A..         MOV       ?V2,R2
+   \   00003D   8B..         MOV       ?V3,R3
+   \   00003F   AF..         MOV       R7,?V3
+   \   000041   EA           MOV       A,R2
+   \   000042   4F           ORL       A,R7
+   \   000043   6055         JZ        ??zclOrvibo_event_loop_5
+   \   000045   8A82         MOV       DPL,R2
+   \   000047   8B83         MOV       DPH,R3
+   \   000049   E0           MOVX      A,@DPTR
+   \   00004A   24CC         ADD       A,#-0x34
+   \   00004C   6006         JZ        ??zclOrvibo_event_loop_6
+   \   00004E   2463         ADD       A,#0x63
+   \   000050   60C3         JZ        ??zclOrvibo_event_loop_2
+   \   000052   80D8         SJMP      ??zclOrvibo_event_loop_4
+   \                     ??zclOrvibo_event_loop_6:
+   \   000054   EA           MOV       A,R2
+   \   000055   2417         ADD       A,#0x17
+   \   000057   F8           MOV       R0,A
+   \   000058   E4           CLR       A
+   \   000059   3F           ADDC      A,R7
+   \   00005A   F9           MOV       R1,A
+   \   00005B   E8           MOV       A,R0
+   \   00005C   FA           MOV       R2,A
+   \   00005D   E9           MOV       A,R1
+   \   00005E   FB           MOV       R3,A
+   \   00005F   A3           INC       DPTR
+   \   000060   A3           INC       DPTR
+   \   000061   A3           INC       DPTR
+   \   000062   A3           INC       DPTR
+   \   000063   A3           INC       DPTR
+   \   000064   A3           INC       DPTR
+   \   000065   A3           INC       DPTR
+   \   000066   E0           MOVX      A,@DPTR
+   \   000067   14           DEC       A
+   \   000068   6011         JZ        ??zclOrvibo_event_loop_7
+   \   00006A   24FD         ADD       A,#-0x3
+   \   00006C   701A         JNZ       ??zclOrvibo_event_loop_8
+   \   00006E   12....       LCALL     ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   000071   E0           MOVX      A,@DPTR
+   \   000072   F9           MOV       R1,A
+   \   000073   E8           MOV       A,R0
+   \   000074   C3           CLR       C
+   \   000075   99           SUBB      A,R1
+   \   000076   5010         JNC       ??zclOrvibo_event_loop_8
+   \   000078   08           INC       R0
+   \   000079   80F6         SJMP      ??CrossCallReturnLabel_0
+   \                     ??zclOrvibo_event_loop_7:
+   \   00007B   12....       LCALL     ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   00007E   8001         SJMP      ??zclOrvibo_event_loop_9
+   \                     ??zclOrvibo_event_loop_10:
+   \   000080   08           INC       R0
+   \                     ??zclOrvibo_event_loop_9:
+   \   000081   E0           MOVX      A,@DPTR
+   \   000082   F9           MOV       R1,A
+   \   000083   E8           MOV       A,R0
+   \   000084   C3           CLR       C
+   \   000085   99           SUBB      A,R1
+   \   000086   40F8         JC        ??zclOrvibo_event_loop_10
+   \                     ??zclOrvibo_event_loop_8:
+   \   000088   8A82         MOV       DPL,R2
+   \   00008A   8B83         MOV       DPH,R3
+   \   00008C   E0           MOVX      A,@DPTR
+   \   00008D   FA           MOV       R2,A
+   \   00008E   A3           INC       DPTR
+   \   00008F   E0           MOVX      A,@DPTR
+   \   000090   FB           MOV       R3,A
+   \   000091   EA           MOV       A,R2
+   \   000092   4B           ORL       A,R3
+   \   000093   6097         JZ        ??zclOrvibo_event_loop_4
+   \   000095                ; Setup parameters for call to function osal_mem_free
+   \   000095   12....       LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
+   \   000098   8092         SJMP      ??zclOrvibo_event_loop_4
+   \                     ??zclOrvibo_event_loop_5:
+   \   00009A   AA..         MOV       R2,?V0
+   \   00009C   E5..         MOV       A,?V1
+   \   00009E   6480         XRL       A,#0x80
+   \   0000A0   FB           MOV       R3,A
+   \   0000A1   02....       LJMP      ??zclOrvibo_event_loop_1 & 0xFFFF
+    374          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   8882         MOV       DPL,R0
+   \   000002   8983         MOV       DPH,R1
+   \   000004   E0           MOVX      A,@DPTR
+   \   000005   F8           MOV       R0,A
+   \   000006   A3           INC       DPTR
+   \   000007   E0           MOVX      A,@DPTR
+   \   000008   8882         MOV       DPL,R0
+   \   00000A   F583         MOV       DPH,A
+   \   00000C   7800         MOV       R0,#0x0
+   \   00000E   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   7F04         MOV       R7,#0x4
+   \   000002   02....       LJMP      ?BANKED_LEAVE_XDATA
+    375          
+    376          
+    377          /*********************************************************************
+    378           * @fn      zclOrvibo_HandleKeys
+    379           *
+    380           * @brief   Handles all key events for this device.
+    381           *
+    382           * @param   shift - true if in shift/alt.
+    383           * @param   keys - bit field for key events. Valid entries:
+    384           *                 HAL_KEY_SW_5
+    385           *                 HAL_KEY_SW_6
+    386           *                 HAL_KEY_SW_2
+    387           *                 HAL_KEY_SW_1
+    388           *
+    389           * @return  none
+    390           */
+    391          
+    392          /*********************************************************************
+    393           * @fn      zclOrvibo_LcdDisplayUpdate
+    394           *
+    395           * @brief   Called to update the LCD display.
+    396           *
+    397           * @param   none
+    398           *
+    399           * @return  none
+    400           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    401          void updateRelay ( bool value )
+   \                     updateRelay:
+    402          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV       A,R1
+    403            if (value) {
+   \   000006   90....       MOV       DPTR,#RELAY_STATE
+   \   000009   6007         JZ        ??updateRelay_0
+    404              RELAY_STATE = 1;
+   \   00000B   7401         MOV       A,#0x1
+   \   00000D   F0           MOVX      @DPTR,A
+   \   00000E                ; Setup parameters for call to function HalLedSet
+   \   00000E   FA           MOV       R2,A
+   \   00000F   F9           MOV       R1,A
+   \   000010   8005         SJMP      ??updateRelay_1
+    405            } else {
+    406              RELAY_STATE = 0;
+   \                     ??updateRelay_0:
+   \   000012   E4           CLR       A
+   \   000013   F0           MOVX      @DPTR,A
+   \   000014                ; Setup parameters for call to function HalLedSet
+   \   000014   FA           MOV       R2,A
+   \   000015   7901         MOV       R1,#0x1
+   \                     ??updateRelay_1:
+   \   000017   12....       LCALL     `??HalLedSet::?relay`; Banked call to: HalLedSet
+    407            }
+    408            applyRelay();
+    409            zclOrvibo_ReportOnOff();
+   \   00001A                ; Setup parameters for call to function zclOrvibo_ReportOnOff
+   \   00001A   12....       LCALL     `??zclOrvibo_ReportOnOff::?relay`; Banked call to: zclOrvibo_ReportOnOff
+    410          }
+   \   00001D   02....       LJMP      ?Subroutine0 & 0xFFFF
+    411          void applyRelay ( void )
+    412          {
+    413            if (RELAY_STATE == 0) {
+    414              HalLedSet ( HAL_LED_1, HAL_LED_MODE_OFF );
+    415            } else {
+    416              HalLedSet ( HAL_LED_1, HAL_LED_MODE_ON );
+    417            }
+    418          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    419          static void zclOrvibo_OnOffCB(uint8 cmd)
+   \                     zclOrvibo_OnOffCB:
+    420          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV       A,R1
+   \   000006   FE           MOV       R6,A
+    421            afIncomingMSGPacket_t *pPtr = zcl_getRawAFMsg();
+   \   000007                ; Setup parameters for call to function zcl_getRawAFMsg
+   \   000007   12....       LCALL     `??zcl_getRawAFMsg::?relay`; Banked call to: zcl_getRawAFMsg
+   \   00000A   8A82         MOV       DPL,R2
+   \   00000C   8B83         MOV       DPH,R3
+    422            zclOrvibo_DstAddr.addr.shortAddr = pPtr->srcAddr.addr.shortAddr;
+   \   00000E   A3           INC       DPTR
+   \   00000F   A3           INC       DPTR
+   \   000010   A3           INC       DPTR
+   \   000011   A3           INC       DPTR
+   \   000012   A3           INC       DPTR
+   \   000013   A3           INC       DPTR
+   \   000014   E0           MOVX      A,@DPTR
+   \   000015   F8           MOV       R0,A
+   \   000016   A3           INC       DPTR
+   \   000017   E0           MOVX      A,@DPTR
+   \   000018   F9           MOV       R1,A
+   \   000019   90....       MOV       DPTR,#zclOrvibo_DstAddr
+   \   00001C   E8           MOV       A,R0
+   \   00001D   F0           MOVX      @DPTR,A
+   \   00001E   A3           INC       DPTR
+   \   00001F   E9           MOV       A,R1
+   \   000020   F0           MOVX      @DPTR,A
+    423            
+    424            if (cmd == COMMAND_ON) {
+   \   000021   7401         MOV       A,#0x1
+   \   000023   6E           XRL       A,R6
+   \   000024   600E         JZ        ??zclOrvibo_OnOffCB_0
+    425              updateRelay(TRUE);
+   \   000026                ; Setup parameters for call to function updateRelay
+    426            }
+    427            else if (cmd == COMMAND_OFF) {
+   \   000026   EE           MOV       A,R6
+   \   000027   600F         JZ        ??zclOrvibo_OnOffCB_1
+    428              updateRelay(FALSE);
+   \   000029                ; Setup parameters for call to function updateRelay
+    429            }
+    430            else if (cmd == COMMAND_TOGGLE) {
+   \   000029   7402         MOV       A,#0x2
+   \   00002B   6E           XRL       A,R6
+   \   00002C   700F         JNZ       ??zclOrvibo_OnOffCB_2
+    431              updateRelay(RELAY_STATE == 0);
+   \   00002E   90....       MOV       DPTR,#RELAY_STATE
+   \   000031   E0           MOVX      A,@DPTR
+   \   000032   7004         JNZ       ??zclOrvibo_OnOffCB_1
+   \                     ??zclOrvibo_OnOffCB_0:
+   \   000034   7901         MOV       R1,#0x1
+   \   000036   8002         SJMP      ??zclOrvibo_OnOffCB_3
+   \                     ??zclOrvibo_OnOffCB_1:
+   \   000038   7900         MOV       R1,#0x0
+   \                     ??zclOrvibo_OnOffCB_3:
+   \   00003A                ; Setup parameters for call to function updateRelay
+   \   00003A   12....       LCALL     `??updateRelay::?relay`; Banked call to: updateRelay
+    432            }
+    433          }
+   \                     ??zclOrvibo_OnOffCB_2:
+   \   00003D   7F02         MOV       R7,#0x2
+   \   00003F   02....       LJMP      ?BANKED_LEAVE_XDATA
+    434          
+    435          /*********************************************************************
+    436           * @fn      zclOrvibo_ProcessCommissioningStatus
+    437           *
+    438           * @brief   Callback in which the status of the commissioning process are reported
+    439           *
+    440           * @param   bdbCommissioningModeMsg - Context message of the status of a commissioning process
+    441           *
+    442           * @return  none
+    443           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    444          static void zclOrvibo_ProcessCommissioningStatus(bdbCommissioningModeMsg_t *bdbCommissioningModeMsg)
+   \                     zclOrvibo_ProcessCommissioningStatus:
+    445          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    446            switch(bdbCommissioningModeMsg->bdbCommissioningMode)
+   \   000004   8A82         MOV       DPL,R2
+   \   000006   8B83         MOV       DPH,R3
+   \   000008   A3           INC       DPTR
+   \   000009   E0           MOVX      A,@DPTR
+   \   00000A   6402         XRL       A,#0x2
+   \   00000C   7010         JNZ       ??zclOrvibo_ProcessCommissioningStatus_0
+    447            {
+    448              case BDB_COMMISSIONING_FORMATION:
+    449                if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_SUCCESS)
+   \   00000E   8A82         MOV       DPL,R2
+   \   000010   8B83         MOV       DPH,R3
+   \   000012   E0           MOVX      A,@DPTR
+   \   000013   7009         JNZ       ??zclOrvibo_ProcessCommissioningStatus_0
+    450                {
+    451                  //After formation, perform nwk steering again plus the remaining commissioning modes that has not been process yet
+    452                  bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_STEERING | bdbCommissioningModeMsg->bdbRemainingCommissioningModes);
+   \   000015                ; Setup parameters for call to function bdb_StartCommissioning
+   \   000015   A3           INC       DPTR
+   \   000016   A3           INC       DPTR
+   \   000017   E0           MOVX      A,@DPTR
+   \   000018   4402         ORL       A,#0x2
+   \   00001A   F9           MOV       R1,A
+   \   00001B   12....       LCALL     `??bdb_StartCommissioning::?relay`; Banked call to: bdb_StartCommissioning
+    453                }
+    454                else
+    455                {
+    456                  //Want to try other channels?
+    457                  //try with bdb_setChannelAttribute
+    458                }
+    459              break;
+    460              case BDB_COMMISSIONING_NWK_STEERING:
+    461                if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_SUCCESS)
+    462                {
+    463                  //YOUR JOB:
+    464                  //We are on the nwk, what now?
+    465                }
+    466                else
+    467                {
+    468                  //See the possible errors for nwk steering procedure
+    469                  //No suitable networks found
+    470                  //Want to try other channels?
+    471                  //try with bdb_setChannelAttribute
+    472                }
+    473              break;
+    474              case BDB_COMMISSIONING_FINDING_BINDING:
+    475                if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_SUCCESS)
+    476                {
+    477                  //YOUR JOB:
+    478                }
+    479                else
+    480                {
+    481                  //YOUR JOB:
+    482                  //retry?, wait for user interaction?
+    483                }
+    484              break;
+    485              case BDB_COMMISSIONING_INITIALIZATION:
+    486                //Initialization notification can only be successful. Failure on initialization
+    487                //only happens for ZED and is notified as BDB_COMMISSIONING_PARENT_LOST notification
+    488          
+    489                //YOUR JOB:
+    490                //We are on a network, what now?
+    491          
+    492              break;
+    493          #if ZG_BUILD_ENDDEVICE_TYPE    
+    494              case BDB_COMMISSIONING_PARENT_LOST:
+    495                if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_NETWORK_RESTORED)
+    496                {
+    497                  //We did recover from losing parent
+    498                }
+    499                else
+    500                {
+    501                  //Parent not found, attempt to rejoin again after a fixed delay
+    502                  osal_start_timerEx(zclOrvibo_TaskID, ORVIBO_END_DEVICE_REJOIN_EVT, ORVIBO_END_DEVICE_REJOIN_DELAY);
+    503                }
+    504              break;
+    505          #endif 
+    506            }
+    507          }
+   \                     ??zclOrvibo_ProcessCommissioningStatus_0:
+   \   00001E                REQUIRE ?Subroutine2
+   \   00001E                ; // Fall through to label ?Subroutine2
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   D083         POP       DPH
+   \   000002   D082         POP       DPL
+   \   000004   02....       LJMP      ?BRET
+    508          
+    509          /*********************************************************************
+    510           * @fn      zclOrvibo_ProcessIdentifyTimeChange
+    511           *
+    512           * @brief   Called to process any change to the IdentifyTime attribute.
+    513           *
+    514           * @param   endpoint - in which the identify has change
+    515           *
+    516           * @return  none
+    517           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    518          static void zclOrvibo_ProcessIdentifyTimeChange( uint8 endpoint )
+   \                     zclOrvibo_ProcessIdentifyTimeChange:
+    519          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    520            (void) endpoint;
+    521          
+    522            if ( zclOrvibo_IdentifyTime > 0 )
+    523            {
+    524              // HalLedBlink ( HAL_LED_2, 0xFF, HAL_LED_DEFAULT_DUTY_CYCLE, HAL_LED_DEFAULT_FLASH_TIME );
+    525            }
+    526            else
+    527            {
+    528              // HalLedSet ( HAL_LED_2, HAL_LED_MODE_OFF );
+    529            }
+    530          }
+   \   000000   02....       LJMP      ?BRET
+    531          
+    532          /*********************************************************************
+    533           * @fn      zclOrvibo_BindNotification
+    534           *
+    535           * @brief   Called when a new bind is added.
+    536           *
+    537           * @param   data - pointer to new bind data
+    538           *
+    539           * @return  none
+    540           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    541          static void zclOrvibo_BindNotification( bdbBindNotificationData_t *data )
+   \                     zclOrvibo_BindNotification:
+    542          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    543            // ORVIBO_TODO: process the new bind information
+    544          }
+   \   000000   02....       LJMP      ?BRET
+    545          
+    546          
+    547          /*********************************************************************
+    548           * @fn      zclOrvibo_ProcessTouchlinkTargetEnable
+    549           *
+    550           * @brief   Called to process when the touchlink target functionality
+    551           *          is enabled or disabled
+    552           *
+    553           * @param   none
+    554           *
+    555           * @return  none
+    556           */
+    557          
+    558          /*********************************************************************
+    559           * @fn      zclOrvibo_BasicResetCB
+    560           *
+    561           * @brief   Callback from the ZCL General Cluster Library
+    562           *          to set all the Basic Cluster attributes to default values.
+    563           *
+    564           * @param   none
+    565           *
+    566           * @return  none
+    567           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    568          static void zclOrvibo_BasicResetCB( void )
+   \                     zclOrvibo_BasicResetCB:
+    569          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    570          
+    571            /* ORVIBO_TODO: remember to update this function with any
+    572               application-specific cluster attribute variables */
+    573            
+    574            zclOrvibo_ResetAttributesToDefaultValues();
+   \   000004                ; Setup parameters for call to function zclOrvibo_ResetAttributesToDefaultValues
+   \   000004   12....       LCALL     `??zclOrvibo_ResetAttributesToDefaultValues::?re`; Banked call to: zclOrvibo_ResetAttributesToDefaultValues
+    575            
+    576          }
+   \   000007   80..         SJMP      ?Subroutine2
+    577          /*********************************************************************
+    578           * @fn      zclSampleApp_BatteryWarningCB
+    579           *
+    580           * @brief   Called to handle battery-low situation.
+    581           *
+    582           * @param   voltLevel - level of severity
+    583           *
+    584           * @return  none
+    585           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    586          void zclSampleApp_BatteryWarningCB( uint8 voltLevel )
+   \                     zclSampleApp_BatteryWarningCB:
+    587          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    588            if ( voltLevel == VOLT_LEVEL_CAUTIOUS )
+    589            {
+    590              // Send warning message to the gateway and blink LED
+    591            }
+    592            else if ( voltLevel == VOLT_LEVEL_BAD )
+    593            {
+    594              // Shut down the system
+    595            }
+    596          }
+   \   000000   02....       LJMP      ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    597          void zclOrvibo_ReportOnOff(void) {
+   \                     zclOrvibo_ReportOnOff:
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV       A,#-0xc
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+    598            const uint8 NUM_ATTRIBUTES = 1;
+    599          
+    600            zclReportCmd_t *pReportCmd;
+    601          
+    602            pReportCmd = osal_mem_alloc(sizeof(zclReportCmd_t) +
+    603                                        (NUM_ATTRIBUTES * sizeof(zclReport_t)));
+   \   000005                ; Setup parameters for call to function osal_mem_alloc
+   \   000005   7A06         MOV       R2,#0x6
+   \   000007   7B00         MOV       R3,#0x0
+   \   000009   12....       LCALL     `??osal_mem_alloc::?relay`; Banked call to: osal_mem_alloc
+   \   00000C   8A..         MOV       ?V0,R2
+   \   00000E   8B..         MOV       ?V1,R3
+    604            if (pReportCmd != NULL) {
+   \   000010   EA           MOV       A,R2
+   \   000011   4B           ORL       A,R3
+   \   000012   6062         JZ        ??zclOrvibo_ReportOnOff_0
+    605              pReportCmd->numAttr = NUM_ATTRIBUTES;
+   \   000014   8A82         MOV       DPL,R2
+   \   000016   8B83         MOV       DPH,R3
+   \   000018   7401         MOV       A,#0x1
+   \   00001A   F0           MOVX      @DPTR,A
+    606          
+    607              pReportCmd->attrList[0].attrID = ATTRID_ON_OFF;
+   \   00001B   A3           INC       DPTR
+   \   00001C   E4           CLR       A
+   \   00001D   F0           MOVX      @DPTR,A
+   \   00001E   A3           INC       DPTR
+   \   00001F   12....       LCALL     ?Subroutine4 & 0xFFFF
+    608              pReportCmd->attrList[0].dataType = ZCL_DATATYPE_BOOLEAN;
+   \                     ??CrossCallReturnLabel_2:
+   \   000022   7410         MOV       A,#0x10
+   \   000024   12....       LCALL     ?Subroutine4 & 0xFFFF
+    609              pReportCmd->attrList[0].attrData = (void *)(&RELAY_STATE);
+   \                     ??CrossCallReturnLabel_3:
+   \   000027   A3           INC       DPTR
+   \   000028   74..         MOV       A,#RELAY_STATE & 0xff
+   \   00002A   F0           MOVX      @DPTR,A
+   \   00002B   A3           INC       DPTR
+   \   00002C   74..         MOV       A,#(RELAY_STATE >> 8) & 0xff
+   \   00002E   F0           MOVX      @DPTR,A
+    610          
+    611              zclOrvibo_DstAddr.addrMode = (afAddrMode_t)Addr16Bit;
+   \   00002F   90....       MOV       DPTR,#zclOrvibo_DstAddr + 8
+   \   000032   7402         MOV       A,#0x2
+   \   000034   F0           MOVX      @DPTR,A
+    612              zclOrvibo_DstAddr.addr.shortAddr = 0;
+   \   000035   90....       MOV       DPTR,#zclOrvibo_DstAddr
+   \   000038   E4           CLR       A
+   \   000039   F0           MOVX      @DPTR,A
+   \   00003A   A3           INC       DPTR
+   \   00003B   F0           MOVX      @DPTR,A
+    613              zclOrvibo_DstAddr.endPoint = 1;
+   \   00003C   90....       MOV       DPTR,#zclOrvibo_DstAddr + 9
+   \   00003F   04           INC       A
+   \   000040   F0           MOVX      @DPTR,A
+    614          
+    615              zcl_SendReportCmd(ORVIBO_ENDPOINT, &zclOrvibo_DstAddr,
+    616                                ZCL_CLUSTER_ID_GEN_ON_OFF, pReportCmd,
+    617                                ZCL_FRAME_CLIENT_SERVER_DIR, false, SeqNum++);
+   \   000041   90....       MOV       DPTR,#SeqNum
+   \   000044   E0           MOVX      A,@DPTR
+   \   000045   F8           MOV       R0,A
+   \   000046   7401         MOV       A,#0x1
+   \   000048   28           ADD       A,R0
+   \   000049   F0           MOVX      @DPTR,A
+   \   00004A                ; Setup parameters for call to function zcl_SendReportCmd
+   \   00004A   E8           MOV       A,R0
+   \   00004B   F5..         MOV       ?V2,A
+   \   00004D   78..         MOV       R0,#?V2
+   \   00004F   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   000052   75..00       MOV       ?V2,#0x0
+   \   000055   78..         MOV       R0,#?V2
+   \   000057   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   00005A   78..         MOV       R0,#?V2
+   \   00005C   12....       LCALL     ?PUSH_XSTACK_I_ONE
+   \   00005F   78..         MOV       R0,#?V0
+   \   000061   12....       LCALL     ?PUSH_XSTACK_I_TWO
+   \   000064   7C06         MOV       R4,#0x6
+   \   000066   7D00         MOV       R5,#0x0
+   \   000068   7A..         MOV       R2,#zclOrvibo_DstAddr & 0xff
+   \   00006A   7B..         MOV       R3,#(zclOrvibo_DstAddr >> 8) & 0xff
+   \   00006C   7901         MOV       R1,#0x1
+   \   00006E   12....       LCALL     `??zcl_SendReportCmd::?relay`; Banked call to: zcl_SendReportCmd
+   \   000071   7405         MOV       A,#0x5
+   \   000073   12....       LCALL     ?DEALLOC_XSTACK8
+    618            }
+    619          
+    620            osal_mem_free(pReportCmd);
+   \                     ??zclOrvibo_ReportOnOff_0:
+   \   000076                ; Setup parameters for call to function osal_mem_free
+   \   000076   AA..         MOV       R2,?V0
+   \   000078   AB..         MOV       R3,?V1
+   \   00007A   12....       LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
+    621          }
+   \   00007D                REQUIRE ?Subroutine1
+   \   00007D                ; // Fall through to label ?Subroutine1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   F0           MOVX      @DPTR,A
+   \   000001   8A82         MOV       DPL,R2
+   \   000003   8B83         MOV       DPH,R3
+   \   000005   A3           INC       DPTR
+   \   000006   A3           INC       DPTR
+   \   000007   A3           INC       DPTR
+   \   000008   22           RET
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for zclOrvibo_NwkState>`:
+   \   000000   01           DB 1
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for sSwHelp>`:
+   \   000000   5357343A     DB "SW4: Help       "
+   \            2048656C
+   \            70202020
+   \            20202020
+   \            00      
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for zclOrvibo_CmdCallbacks>`:
+   \   000000   ....         DW `??zclOrvibo_BasicResetCB::?relay`
+   \   000002   0000         DW 0H
+   \   000004   ....         DW `??zclOrvibo_OnOffCB::?relay`
+   \   000006   0000         DW 0H
+   \   000008   0000         DW 0H
+   \   00000A   0000         DW 0H
+   \   00000C   0000         DW 0H
+   \   00000E   0000         DW 0H
+   \   000010   0000         DW 0H
+   \   000012   0000         DW 0H
+   \   000014   0000         DW 0H
+   \   000016   0000         DW 0H
+    622          /******************************************************************************
+    623           *
+    624           *  Functions for processing ZCL Foundation incoming Command/Response messages
+    625           *
+    626           *****************************************************************************/
+    627          
+    628          /*********************************************************************
+    629           * @fn      zclOrvibo_ProcessIncomingMsg
+    630           *
+    631           * @brief   Process ZCL Foundation incoming message
+    632           *
+    633           * @param   pInMsg - pointer to the received message
+    634           *
+    635           * @return  none
+    636           */
+    637          static void zclOrvibo_ProcessIncomingMsg( zclIncomingMsg_t *pInMsg )
+    638          {
+    639            switch ( pInMsg->zclHdr.commandID )
+    640            {
+    641          #ifdef ZCL_READ
+    642              case ZCL_CMD_READ_RSP:
+    643                zclOrvibo_ProcessInReadRspCmd( pInMsg );
+    644                break;
+    645          #endif
+    646          #ifdef ZCL_WRITE
+    647              case ZCL_CMD_WRITE_RSP:
+    648                zclOrvibo_ProcessInWriteRspCmd( pInMsg );
+    649                break;
+    650          #endif
+    651              case ZCL_CMD_CONFIG_REPORT:
+    652              case ZCL_CMD_CONFIG_REPORT_RSP:
+    653              case ZCL_CMD_READ_REPORT_CFG:
+    654              case ZCL_CMD_READ_REPORT_CFG_RSP:
+    655              case ZCL_CMD_REPORT:
+    656                //bdb_ProcessIncomingReportingMsg( pInMsg );
+    657                break;
+    658                
+    659              case ZCL_CMD_DEFAULT_RSP:
+    660                zclOrvibo_ProcessInDefaultRspCmd( pInMsg );
+    661                break;
+    662          #ifdef ZCL_DISCOVER
+    663              case ZCL_CMD_DISCOVER_CMDS_RECEIVED_RSP:
+    664                zclOrvibo_ProcessInDiscCmdsRspCmd( pInMsg );
+    665                break;
+    666          
+    667              case ZCL_CMD_DISCOVER_CMDS_GEN_RSP:
+    668                zclOrvibo_ProcessInDiscCmdsRspCmd( pInMsg );
+    669                break;
+    670          
+    671              case ZCL_CMD_DISCOVER_ATTRS_RSP:
+    672                zclOrvibo_ProcessInDiscAttrsRspCmd( pInMsg );
+    673                break;
+    674          
+    675              case ZCL_CMD_DISCOVER_ATTRS_EXT_RSP:
+    676                zclOrvibo_ProcessInDiscAttrsExtRspCmd( pInMsg );
+    677                break;
+    678          #endif
+    679              default:
+    680                break;
+    681            }
+    682          
+    683            if ( pInMsg->attrCmd )
+    684              osal_mem_free( pInMsg->attrCmd );
+    685          }
+    686          
+    687          #ifdef ZCL_READ
+    688          /*********************************************************************
+    689           * @fn      zclOrvibo_ProcessInReadRspCmd
+    690           *
+    691           * @brief   Process the "Profile" Read Response Command
+    692           *
+    693           * @param   pInMsg - incoming message to process
+    694           *
+    695           * @return  none
+    696           */
+    697          static uint8 zclOrvibo_ProcessInReadRspCmd( zclIncomingMsg_t *pInMsg )
+    698          {
+    699            zclReadRspCmd_t *readRspCmd;
+    700            uint8 i;
+    701          
+    702            readRspCmd = (zclReadRspCmd_t *)pInMsg->attrCmd;
+    703            for (i = 0; i < readRspCmd->numAttr; i++)
+    704            {
+    705              // Notify the originator of the results of the original read attributes
+    706              // attempt and, for each successfull request, the value of the requested
+    707              // attribute
+    708            }
+    709          
+    710            return ( TRUE );
+    711          }
+    712          #endif // ZCL_READ
+    713          
+    714          #ifdef ZCL_WRITE
+    715          /*********************************************************************
+    716           * @fn      zclOrvibo_ProcessInWriteRspCmd
+    717           *
+    718           * @brief   Process the "Profile" Write Response Command
+    719           *
+    720           * @param   pInMsg - incoming message to process
+    721           *
+    722           * @return  none
+    723           */
+    724          static uint8 zclOrvibo_ProcessInWriteRspCmd( zclIncomingMsg_t *pInMsg )
+    725          {
+    726            zclWriteRspCmd_t *writeRspCmd;
+    727            uint8 i;
+    728          
+    729            writeRspCmd = (zclWriteRspCmd_t *)pInMsg->attrCmd;
+    730            for ( i = 0; i < writeRspCmd->numAttr; i++ )
+    731            {
+    732              // Notify the device of the results of the its original write attributes
+    733              // command.
+    734            }
+    735          
+    736            return ( TRUE );
+    737          }
+    738          #endif // ZCL_WRITE
+    739          
+    740          /*********************************************************************
+    741           * @fn      zclOrvibo_ProcessInDefaultRspCmd
+    742           *
+    743           * @brief   Process the "Profile" Default Response Command
+    744           *
+    745           * @param   pInMsg - incoming message to process
+    746           *
+    747           * @return  none
+    748           */
+    749          static uint8 zclOrvibo_ProcessInDefaultRspCmd( zclIncomingMsg_t *pInMsg )
+    750          {
+    751            // zclDefaultRspCmd_t *defaultRspCmd = (zclDefaultRspCmd_t *)pInMsg->attrCmd;
+    752          
+    753            // Device is notified of the Default Response command.
+    754            (void)pInMsg;
+    755          
+    756            return ( TRUE );
+    757          }
+    758          
+    759          #ifdef ZCL_DISCOVER
+    760          /*********************************************************************
+    761           * @fn      zclOrvibo_ProcessInDiscCmdsRspCmd
+    762           *
+    763           * @brief   Process the Discover Commands Response Command
+    764           *
+    765           * @param   pInMsg - incoming message to process
+    766           *
+    767           * @return  none
+    768           */
+    769          static uint8 zclOrvibo_ProcessInDiscCmdsRspCmd( zclIncomingMsg_t *pInMsg )
+    770          {
+    771            zclDiscoverCmdsCmdRsp_t *discoverRspCmd;
+    772            uint8 i;
+    773          
+    774            discoverRspCmd = (zclDiscoverCmdsCmdRsp_t *)pInMsg->attrCmd;
+    775            for ( i = 0; i < discoverRspCmd->numCmd; i++ )
+    776            {
+    777              // Device is notified of the result of its attribute discovery command.
+    778            }
+    779          
+    780            return ( TRUE );
+    781          }
+    782          
+    783          /*********************************************************************
+    784           * @fn      zclOrvibo_ProcessInDiscAttrsRspCmd
+    785           *
+    786           * @brief   Process the "Profile" Discover Attributes Response Command
+    787           *
+    788           * @param   pInMsg - incoming message to process
+    789           *
+    790           * @return  none
+    791           */
+    792          static uint8 zclOrvibo_ProcessInDiscAttrsRspCmd( zclIncomingMsg_t *pInMsg )
+    793          {
+    794            zclDiscoverAttrsRspCmd_t *discoverRspCmd;
+    795            uint8 i;
+    796          
+    797            discoverRspCmd = (zclDiscoverAttrsRspCmd_t *)pInMsg->attrCmd;
+    798            for ( i = 0; i < discoverRspCmd->numAttr; i++ )
+    799            {
+    800              // Device is notified of the result of its attribute discovery command.
+    801            }
+    802          
+    803            return ( TRUE );
+    804          }
+    805          
+    806          /*********************************************************************
+    807           * @fn      zclOrvibo_ProcessInDiscAttrsExtRspCmd
+    808           *
+    809           * @brief   Process the "Profile" Discover Attributes Extended Response Command
+    810           *
+    811           * @param   pInMsg - incoming message to process
+    812           *
+    813           * @return  none
+    814           */
+    815          static uint8 zclOrvibo_ProcessInDiscAttrsExtRspCmd( zclIncomingMsg_t *pInMsg )
+    816          {
+    817            zclDiscoverAttrsExtRsp_t *discoverRspCmd;
+    818            uint8 i;
+    819          
+    820            discoverRspCmd = (zclDiscoverAttrsExtRsp_t *)pInMsg->attrCmd;
+    821            for ( i = 0; i < discoverRspCmd->numAttr; i++ )
+    822            {
+    823              // Device is notified of the result of its attribute discovery command.
+    824            }
+    825          
+    826            return ( TRUE );
+    827          }
+    828          #endif // ZCL_DISCOVER
+    829          
+    830          /****************************************************************************
+    831          ****************************************************************************/
+    832          
+    833          
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      0     19   updateRelay
+        0      9   -> HalLedSet
+        0      9   -> zclOrvibo_ReportOnOff
+      2      0   zclOrvibo_BasicResetCB
+        2      0   -> zclOrvibo_ResetAttributesToDefaultValues
+      0      0   zclOrvibo_BindNotification
+      0      9   zclOrvibo_Init
+        0      9   -> HalLcdWriteString
+        0      9   -> RegisterForKeys
+        0      9   -> RegisterVoltageWarningCB
+        0      9   -> bdb_RegisterBindNotificationCB
+        0      9   -> bdb_RegisterCommissioningStatusCB
+        0      9   -> bdb_RegisterIdentifyTimeChangeCB
+        0      9   -> bdb_RegisterSimpleDescriptor
+        0      9   -> bdb_StartCommissioning
+        0      9   -> zclGeneral_RegisterCmdCallbacks
+        0      9   -> zcl_registerAttrList
+        0      9   -> zcl_registerForMsg
+      0     10   zclOrvibo_OnOffCB
+        0     10   -> updateRelay
+        0     10   -> zcl_getRawAFMsg
+      2      0   zclOrvibo_ProcessCommissioningStatus
+        2      0   -> bdb_StartCommissioning
+      0      0   zclOrvibo_ProcessIdentifyTimeChange
+      0     29   zclOrvibo_ReportOnOff
+        0     12   -> osal_mem_alloc
+        0     12   -> osal_mem_free
+        0     17   -> zcl_SendReportCmd
+      0     12   zclOrvibo_event_loop
+        0     12   -> osal_mem_free
+        0     12   -> osal_msg_deallocate
+        0     12   -> osal_msg_receive
+        0     12   -> zclOrvibo_ReportOnOff
+      0      0   zclSampleApp_BatteryWarningCB
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      17  ?<Initializer for sSwHelp>
+      24  ?<Initializer for zclOrvibo_CmdCallbacks>
+       1  ?<Initializer for zclOrvibo_NwkState>
+       5  ?Subroutine0
+       5  ?Subroutine1
+       7  ?Subroutine2
+      15  ?Subroutine3
+       9  ?Subroutine4
+       1  RELAY_STATE
+       1  SeqNum
+       2  sClearLine
+      14  sDeviceName
+      15  sSwBDBMode
+      17  sSwHelp
+      16  sSwOrvibo
+      32  updateRelay
+       9  zclOrvibo_BasicResetCB
+       3  zclOrvibo_BindNotification
+      24  zclOrvibo_CmdCallbacks
+      12  zclOrvibo_DstAddr
+     101  zclOrvibo_Init
+       1  zclOrvibo_NwkState
+      66  zclOrvibo_OnOffCB
+      30  zclOrvibo_ProcessCommissioningStatus
+       3  zclOrvibo_ProcessIdentifyTimeChange
+     125  zclOrvibo_ReportOnOff
+       1  zclOrvibo_TaskID
+     164  zclOrvibo_event_loop
+       3  zclSampleApp_BatteryWarningCB
+      60  -- Other
+
+ 
+ 577 bytes in segment BANKED_CODE
+  60 bytes in segment BANK_RELAYS
+  42 bytes in segment XDATA_I
+  42 bytes in segment XDATA_ID
+  47 bytes in segment XDATA_ROM_C
+  15 bytes in segment XDATA_Z
+ 
+ 102 bytes of CODE     memory
+  47 bytes of CONST    memory
+ 577 bytes of HUGECODE memory
+  57 bytes of XDATA    memory
+
+Errors: none
+Warnings: none
